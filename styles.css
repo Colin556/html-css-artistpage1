@@ -1,0 +1,141 @@
+:root {
+	--color-bg: #f7f7fb;
+	--color-surface: #ffffff;
+	--color-text: #1f2937;
+	--color-muted: #4b5563;
+	--color-border: #e5e7eb;
+	--color-accent: #0f766e;
+	--space-1: 0.5rem;
+	--space-2: 1rem;
+	--space-3: 1.5rem;
+	--space-4: 2rem;
+	--radius: 0.75rem;
+	--container-max: 70rem;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+	line-height: 1.6;
+	color: var(--color-text);
+	background: linear-gradient(180deg, #eef6f5 0%, var(--color-bg) 30%);
+}
+
+a {
+	color: inherit;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+	width: min(100% - (2 * var(--space-2)), var(--container-max));
+	margin-inline: auto;
+}
+
+.site-header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	padding: var(--space-3) 0 var(--space-2);
+}
+
+.site-header h1 {
+	margin: 0;
+	line-height: 1.1;
+}
+
+.site-nav {
+	display: flex;
+}
+
+.nav-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-1);
+}
+
+.nav-list a {
+	text-decoration: none;
+	display: block;
+	padding: 0.45rem 0.75rem;
+	border: 1px solid var(--color-border);
+	border-radius: 999px;
+	background-color: var(--color-surface);
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+	border-color: var(--color-accent);
+	color: var(--color-accent);
+}
+
+.site-main {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2);
+	align-content: flex-start;
+	padding: var(--space-2) 0 var(--space-4);
+}
+
+.site-main section {
+	flex: 1 1 18rem;
+	background-color: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	padding: var(--space-3);
+}
+
+.site-main h2 {
+	margin-top: 0;
+}
+
+.site-main p {
+	margin-bottom: 0;
+	color: var(--color-muted);
+}
+
+.site-main img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+	border: 1px solid var(--color-border);
+}
+
+.site-footer {
+	padding: var(--space-2) 0 var(--space-3);
+	border-top: 1px solid var(--color-border);
+}
+
+.site-footer p {
+	margin: 0;
+	color: var(--color-muted);
+}
+
+@media (min-width: 48rem) {
+	.site-header {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.site-main section:first-child {
+		flex-basis: 100%;
+	}
+}
